@@ -341,6 +341,7 @@ class AppointmentsViewController: UIViewController {
            }
         
            }
+             print("Second Commit Changes")
            }
     
     
