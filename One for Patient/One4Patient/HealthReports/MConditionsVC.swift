@@ -58,7 +58,7 @@ class MConditionsVC: UIViewController {
     @IBAction func plusAxn(_ sender: UIButton) {
         
         addMCView.isHidden = false
-        hideNotificationView()
+        notifyView.isHidden = true
     }
     
     @IBAction func cancelBtnAxn(_ sender: UIButton) {

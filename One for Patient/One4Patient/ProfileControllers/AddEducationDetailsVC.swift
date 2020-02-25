@@ -58,7 +58,7 @@ class AddEducationDetailsVC: UIViewController {
     func postData(){
         
            if reach.isConnectedToNetwork() == true {
-            playLottie(fileName: "heartBeat")
+            playLottie(fileName: "heart")
             let details = ["ProfileId":GlobalVariables.profileID as Any, "Title":titleTF.text! as Any, "College":collageTF.text! as Any, "Institute":universityTF.text! as Any, "StillStudying":study as Any, "DtFrom":fromTF.text! as Any, "DtTo":toDateTF.text! as Any, "Grade":gradeTF.text! as Any ] as [String : Any]
         if typeSC.selectedSegmentIndex == 1 {
             ApiService.callPostToken(url:ClientInterface.postSpecilizationUrl, params: details, methodType: "POST", tag: "AddSpecialization", finish:finishPost)

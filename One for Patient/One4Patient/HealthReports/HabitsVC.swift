@@ -77,6 +77,7 @@ class HabitsVC: UIViewController {
     
     @IBAction func plusAxn(_ sender: UIButton) {
         addHView.isHidden = false
+        notifyView.isHidden = true 
     }
     
     

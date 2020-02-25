@@ -979,7 +979,7 @@
                                     <constraint firstAttribute="width" constant="25" id="djt-ZI-lsQ"/>
                                     <constraint firstAttribute="height" constant="25" id="hHz-6M-FWh"/>
                                 </constraints>
-                                <state key="normal" image="back"/>
+                                <state key="normal" image="backB"/>
                                 <connections>
                                     <action selector="backBtn:" destination="SNl-1y-DbX" eventType="touchUpInside" id="Llh-cz-gA3"/>
                                 </connections>
@@ -1372,7 +1372,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="513"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor3" translatesAutoresizingMaskIntoConstraints="NO" id="uHu-07-D8Q">
-                                <rect key="frame" x="110" y="20" width="100" height="100.00000000000006"/>
+                                <rect key="frame" x="110" y="20" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="JXw-C5-Mac"/>
@@ -2340,6 +2340,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="odD-Pe-2uf"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2349,6 +2350,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="yOi-tH-oXg"/>
                                         </constraints>
+                                        <color key="textColor" red="0.043137254899999998" green="0.35686274509999999" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2358,6 +2360,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="2ee-B0-aGL"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -2739,7 +2742,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdi-6z-UMH">
-                                                        <rect key="frame" x="25" y="2.5" width="255" height="20.5"/>
+                                                        <rect key="frame" x="25" y="4" width="255" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2761,7 +2764,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BEw-cI-ClJ">
-                                                        <rect key="frame" x="25" y="2" width="255" height="21"/>
+                                                        <rect key="frame" x="25" y="3.5" width="255" height="18"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2797,7 +2800,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile No:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzp-jp-7Le">
-                                                        <rect key="frame" x="25" y="2" width="255" height="21"/>
+                                                        <rect key="frame" x="25" y="3.5" width="255" height="18"/>
                                                         <color key="backgroundColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
@@ -2821,7 +2824,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID#      " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3B-7b-758">
-                                                        <rect key="frame" x="25" y="2.5" width="255" height="20.5"/>
+                                                        <rect key="frame" x="25" y="4" width="255" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2866,7 +2869,7 @@
                                         <rect key="frame" x="10" y="290" width="300" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor3" translatesAutoresizingMaskIntoConstraints="NO" id="kXS-B9-9xw">
-                                                <rect key="frame" x="5" y="5" width="60" height="60.000000000000057"/>
+                                                <rect key="frame" x="5" y="5" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="k3Q-v9-F4d"/>
                                                 </constraints>
@@ -3076,16 +3079,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jNf-O9-nDn">
-                                        <rect key="frame" x="67" y="515" width="186.5" height="25"/>
+                                        <rect key="frame" x="65.5" y="515" width="189" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already Registered..?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLw-pX-Lrd">
-                                                <rect key="frame" x="0.0" y="0.0" width="143.5" height="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="145" height="25"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-Wo-rQp">
-                                                <rect key="frame" x="148.5" y="0.0" width="38" height="25"/>
+                                                <rect key="frame" x="150" y="0.0" width="39" height="25"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3120,11 +3123,10 @@
                                             <segment title="Patient"/>
                                             <segment title="Specialist"/>
                                         </segments>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="selectedSegmentTintColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce3-Ef-mcC">
-                                        <rect key="frame" x="125.5" y="20" width="69" height="25"/>
+                                        <rect key="frame" x="127" y="20" width="66.5" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="6qr-8w-fAB"/>
                                         </constraints>
@@ -3166,149 +3168,91 @@
                                             <constraint firstItem="KcS-9q-600" firstAttribute="top" secondItem="jgt-iK-zhe" secondAttribute="top" id="qUa-PQ-4vW"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Conform Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0vh-FU-buP" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Conform Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0vh-FU-buP">
                                         <rect key="frame" x="24" y="430" width="272" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="QZN-E9-u4X"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="tGz-Ez-Uze" id="6NF-uB-HHC"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Phone Numebr" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYs-eF-Duc" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Numebr" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYs-eF-Duc">
                                         <rect key="frame" x="24" y="350" width="272" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="4oB-hM-gyi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="tGz-Ez-Uze" id="oJb-ff-hzQ"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrQ-E2-9P7" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrQ-E2-9P7">
                                         <rect key="frame" x="24" y="190" width="272" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Zsz-RS-1mF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="tGz-Ez-Uze" id="NUJ-Q2-y83"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nKr-O3-aGy" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" background="allergy" translatesAutoresizingMaskIntoConstraints="NO" id="nKr-O3-aGy">
                                         <rect key="frame" x="24" y="110" width="272" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="rpU-zm-fEy"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="tGz-Ez-Uze" id="lhW-iF-q1f"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="783-Jb-zyM" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="783-Jb-zyM">
                                         <rect key="frame" x="24" y="150" width="272" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="3zg-Jt-bCH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
-                                                <color key="value" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="tGz-Ez-Uze" id="f6V-aD-28L"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DOB" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxy-s7-XgN" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DOB" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxy-s7-XgN">
                                         <rect key="frame" x="24" y="270" width="272" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="C0g-28-nxk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="DOBTFAxn:" destination="tGz-Ez-Uze" eventType="editingDidBegin" id="Byz-qq-kKE"/>
                                             <outlet property="delegate" destination="tGz-Ez-Uze" id="64r-jS-cYF"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHA-i5-ymV" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHA-i5-ymV">
                                         <rect key="frame" x="24" y="230" width="272" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="8Rj-AT-Vaz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="tGz-Ez-Uze" id="eKk-jp-3yi"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="j13-cX-9Ly" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="j13-cX-9Ly">
                                         <rect key="frame" x="24" y="390" width="272" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="qJv-Ow-VLo"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="passTFAXN:" destination="tGz-Ez-Uze" eventType="editingDidEnd" id="YVD-Ss-IMU"/>
                                             <outlet property="delegate" destination="tGz-Ez-Uze" id="wFI-RS-G26"/>
@@ -4310,7 +4254,7 @@
                                         <rect key="frame" x="10" y="35" width="300" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor1" translatesAutoresizingMaskIntoConstraints="NO" id="zC1-Gt-85d">
-                                                <rect key="frame" x="10" y="15" width="50" height="50.000000000000057"/>
+                                                <rect key="frame" x="10" y="15" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="tf2-Oe-cx9"/>
                                                     <constraint firstAttribute="height" constant="50" id="unU-aS-qZa"/>
@@ -4399,7 +4343,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specilaity Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDR-eV-tZx">
-                                                                                    <rect key="frame" x="0.0" y="5" width="300" height="20.5"/>
+                                                                                    <rect key="frame" x="0.0" y="6.5" width="300" height="17.5"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
@@ -4425,13 +4369,13 @@
                                                                             <rect key="frame" x="0.0" y="35" width="300" height="43"/>
                                                                             <subviews>
                                                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ1-ng-yaQ">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="64.5" height="0.0"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="61.5" height="0.0"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCx-Rp-Ni0">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="64.5" height="0.0"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="61.5" height="0.0"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -4556,7 +4500,7 @@
                                         <rect key="frame" x="10" y="30" width="300" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor1" translatesAutoresizingMaskIntoConstraints="NO" id="AJs-yq-2DQ">
-                                                <rect key="frame" x="10" y="15" width="50" height="50.000000000000057"/>
+                                                <rect key="frame" x="10" y="15" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="2dh-Uq-7J9"/>
                                                     <constraint firstAttribute="height" constant="50" id="vCu-G1-PGW"/>
@@ -4652,7 +4596,7 @@
                                                                     <rect key="frame" x="10" y="0.0" width="280" height="30"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SymptomsList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnD-kE-wj4">
-                                                                            <rect key="frame" x="0.0" y="5" width="255" height="20.5"/>
+                                                                            <rect key="frame" x="0.0" y="6.5" width="255" height="17.5"/>
                                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -4940,7 +4884,7 @@
                                         <rect key="frame" x="10" y="40" width="300" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor1" translatesAutoresizingMaskIntoConstraints="NO" id="1zb-pS-mIX">
-                                                <rect key="frame" x="10" y="15" width="50" height="50.000000000000057"/>
+                                                <rect key="frame" x="10" y="15" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="22n-m2-Gof"/>
                                                     <constraint firstAttribute="width" constant="50" id="uJu-w4-Sa3"/>
@@ -5014,7 +4958,7 @@
                                                             <rect key="frame" x="10" y="5" width="300" height="70"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor3" translatesAutoresizingMaskIntoConstraints="NO" id="geW-WT-aH8">
-                                                                    <rect key="frame" x="5" y="5" width="60" height="60.000000000000057"/>
+                                                                    <rect key="frame" x="5" y="5" width="60" height="60"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="H45-oE-ewp"/>
                                                                     </constraints>
@@ -5189,7 +5133,7 @@
                                         <rect key="frame" x="10" y="35" width="300" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor1" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-tk-XjL">
-                                                <rect key="frame" x="10" y="15" width="50" height="50.000000000000057"/>
+                                                <rect key="frame" x="10" y="15" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="GVz-U5-5Nn"/>
                                                     <constraint firstAttribute="width" constant="50" id="mBQ-RG-rnj"/>
@@ -5294,7 +5238,7 @@
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="un7-Ad-gXl">
                                         <rect key="frame" x="20" y="255" width="280" height="31"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="3LR-7N-On6"/>
                                         </constraints>
@@ -5303,8 +5247,8 @@
                                             <segment title="Afternoon"/>
                                             <segment title="Evening"/>
                                         </segments>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="selectedSegmentTintColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="feQ-Lp-FVS">
                                         <rect key="frame" x="20" y="300" width="280" height="30"/>
@@ -5851,7 +5795,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor3" translatesAutoresizingMaskIntoConstraints="NO" id="YIr-bx-fDr">
-                                                <rect key="frame" x="5" y="30" width="65" height="65.000000000000057"/>
+                                                <rect key="frame" x="5" y="30" width="65" height="65"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="HKz-Ed-n3T"/>
                                                 </constraints>
@@ -7469,7 +7413,7 @@
                                                             <rect key="frame" x="5" y="5" width="310" height="91"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor1" translatesAutoresizingMaskIntoConstraints="NO" id="Sg6-i5-3Ux">
-                                                                    <rect key="frame" x="5" y="20.5" width="50" height="50.000000000000057"/>
+                                                                    <rect key="frame" x="5" y="20.5" width="50" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="0tl-iQ-BVp"/>
                                                                         <constraint firstAttribute="width" constant="50" id="aXJ-2g-jMQ"/>
@@ -7622,7 +7566,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Appointments " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxz-xq-Cjl">
-                                <rect key="frame" x="79.5" y="20" width="161.5" height="25"/>
+                                <rect key="frame" x="83.5" y="20" width="153.5" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="ftk-O0-cdt"/>
                                 </constraints>
@@ -7818,6 +7762,7 @@
         <image name="IDBalck" width="25" height="25"/>
         <image name="SSN" width="25" height="25"/>
         <image name="addBl" width="25" height="25"/>
+        <image name="allergy" width="25" height="25"/>
         <image name="appoint" width="23" height="23"/>
         <image name="attachB" width="26" height="26"/>
         <image name="back" width="48" height="48"/>

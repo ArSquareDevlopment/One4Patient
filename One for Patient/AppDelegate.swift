@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Remote instance ID token: \(result.token)")
           }
         }
-        prin
+        
 //        MARK: SC - Font
         let font = UIFont(name: "OpenSans", size: 15.0)
         UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font!], for: .normal)

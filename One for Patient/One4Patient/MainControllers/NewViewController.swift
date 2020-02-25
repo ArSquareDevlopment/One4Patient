@@ -51,7 +51,7 @@ class NewViewController: UIViewController {
 
     let VC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         self.navigationController?.pushViewController(VC, animated: true)
-//        print("Button tapped")
+        print("Button tapped")
 
     }
     
