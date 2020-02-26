@@ -11,6 +11,9 @@ import UIKit
 import Lottie
 import Network
 import AMPopTip
+
+
+
 extension UIViewController {
     
 //MARK: Camera Alert
@@ -100,7 +103,19 @@ extension UIViewController {
     
     }
     
-    
+    func getCurrentDateString() -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = .medium
+    dateFormatter.timeStyle = .none
+    dateFormatter.dateFormat = "dd-MM-yyyy" //"dd.MM.yy"                // 21.10.17
+    let date = Date()
+         
+        // US English Locale (en_US)
+    dateFormatter.locale = Locale(identifier: "en_US")
+    print("Current Date = \(dateFormatter.string(from: date))")
+    return dateFormatter.string(from: date)
+        
+    }
     
     
     func showNotificationView(fileName:String,text:String) {

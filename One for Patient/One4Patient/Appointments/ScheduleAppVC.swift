@@ -67,9 +67,8 @@ class ScheduleAppVC: UIViewController {
            IDLbl.text = GlobalVariables.userEmail
        }
         
-        let date =   todaydate.stripTime()
-        print("date = \(date)")
-        dateTF.text = "\(date)"
+        
+        dateTF.text = "\(getCurrentDateString())"
     }
 
     @IBAction func dateTFAct(_ sender: UITextField) {

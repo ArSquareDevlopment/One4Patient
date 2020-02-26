@@ -167,15 +167,15 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HT1-Ir-Wyp">
-                                        <rect key="frame" x="75" y="220" width="170.5" height="73"/>
+                                        <rect key="frame" x="72" y="220" width="176" height="73"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter 6 digit Pin Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mIZ-6y-0ud">
-                                                <rect key="frame" x="0.0" y="0.0" width="170.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="176" height="34"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDl-Ue-FGQ">
-                                                <rect key="frame" x="0.0" y="39" width="170.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="39" width="176" height="34"/>
                                                 <color key="backgroundColor" red="0.26569703220000002" green="0.53728055949999998" blue="0.9940875173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                 <state key="normal" title="Verify Passcode">
@@ -188,7 +188,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jEH-F2-eXh">
-                                        <rect key="frame" x="20" y="360" width="280" height="73"/>
+                                        <rect key="frame" x="20" y="357" width="280" height="73"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrv-G7-KZM">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
@@ -203,7 +203,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6i-GM-8TL">
-                                        <rect key="frame" x="110" y="443" width="100" height="30"/>
+                                        <rect key="frame" x="110" y="440" width="100" height="33"/>
                                         <color key="backgroundColor" red="0.26569703220000002" green="0.53728055949999998" blue="0.9940875173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="YZx-vT-ZAS"/>
@@ -517,7 +517,7 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZq-4E-JqF">
-                            <rect key="frame" x="180" y="10" width="112" height="20"/>
+                            <rect key="frame" x="177" y="10" width="115" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="Rr3-yK-12A"/>
                             </constraints>
@@ -5238,7 +5238,6 @@
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="un7-Ad-gXl">
                                         <rect key="frame" x="20" y="255" width="280" height="31"/>
-                                        <color key="backgroundColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="3LR-7N-On6"/>
                                         </constraints>
@@ -5248,7 +5247,7 @@
                                             <segment title="Evening"/>
                                         </segments>
                                         <color key="tintColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="selectedSegmentTintColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="feQ-Lp-FVS">
                                         <rect key="frame" x="20" y="300" width="280" height="30"/>
