@@ -1372,7 +1372,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="513"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor3" translatesAutoresizingMaskIntoConstraints="NO" id="uHu-07-D8Q">
-                                <rect key="frame" x="110" y="20" width="100" height="100"/>
+                                <rect key="frame" x="110" y="20" width="100" height="100.00000000000006"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="JXw-C5-Mac"/>
@@ -2742,7 +2742,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdi-6z-UMH">
-                                                        <rect key="frame" x="25" y="4" width="255" height="17.5"/>
+                                                        <rect key="frame" x="25" y="2.5" width="255" height="20.5"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2764,7 +2764,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BEw-cI-ClJ">
-                                                        <rect key="frame" x="25" y="3.5" width="255" height="18"/>
+                                                        <rect key="frame" x="25" y="2" width="255" height="21"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2800,7 +2800,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile No:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzp-jp-7Le">
-                                                        <rect key="frame" x="25" y="3.5" width="255" height="18"/>
+                                                        <rect key="frame" x="25" y="2" width="255" height="21"/>
                                                         <color key="backgroundColor" red="0.2666666667" green="0.54117647059999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
@@ -2824,7 +2824,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID#      " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3B-7b-758">
-                                                        <rect key="frame" x="25" y="4" width="255" height="17.5"/>
+                                                        <rect key="frame" x="25" y="2.5" width="255" height="20.5"/>
                                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2869,7 +2869,7 @@
                                         <rect key="frame" x="10" y="290" width="300" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor3" translatesAutoresizingMaskIntoConstraints="NO" id="kXS-B9-9xw">
-                                                <rect key="frame" x="5" y="5" width="60" height="60"/>
+                                                <rect key="frame" x="5" y="5" width="60" height="60.000000000000057"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="k3Q-v9-F4d"/>
                                                 </constraints>
@@ -4254,7 +4254,7 @@
                                         <rect key="frame" x="10" y="35" width="300" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor1" translatesAutoresizingMaskIntoConstraints="NO" id="zC1-Gt-85d">
-                                                <rect key="frame" x="10" y="15" width="50" height="50"/>
+                                                <rect key="frame" x="10" y="15" width="50" height="50.000000000000057"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="tf2-Oe-cx9"/>
                                                     <constraint firstAttribute="height" constant="50" id="unU-aS-qZa"/>
@@ -4343,7 +4343,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specilaity Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDR-eV-tZx">
-                                                                                    <rect key="frame" x="0.0" y="6.5" width="300" height="17.5"/>
+                                                                                    <rect key="frame" x="0.0" y="5" width="300" height="20.5"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
@@ -4369,13 +4369,13 @@
                                                                             <rect key="frame" x="0.0" y="35" width="300" height="43"/>
                                                                             <subviews>
                                                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ1-ng-yaQ">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="61.5" height="0.0"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="64.5" height="0.0"/>
                                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCx-Rp-Ni0">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="61.5" height="0.0"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="64.5" height="0.0"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -4500,7 +4500,7 @@
                                         <rect key="frame" x="10" y="30" width="300" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor1" translatesAutoresizingMaskIntoConstraints="NO" id="AJs-yq-2DQ">
-                                                <rect key="frame" x="10" y="15" width="50" height="50"/>
+                                                <rect key="frame" x="10" y="15" width="50" height="50.000000000000057"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="2dh-Uq-7J9"/>
                                                     <constraint firstAttribute="height" constant="50" id="vCu-G1-PGW"/>
@@ -4596,7 +4596,7 @@
                                                                     <rect key="frame" x="10" y="0.0" width="280" height="30"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SymptomsList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnD-kE-wj4">
-                                                                            <rect key="frame" x="0.0" y="6.5" width="255" height="17.5"/>
+                                                                            <rect key="frame" x="0.0" y="5" width="255" height="20.5"/>
                                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -4884,7 +4884,7 @@
                                         <rect key="frame" x="10" y="40" width="300" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor1" translatesAutoresizingMaskIntoConstraints="NO" id="1zb-pS-mIX">
-                                                <rect key="frame" x="10" y="15" width="50" height="50"/>
+                                                <rect key="frame" x="10" y="15" width="50" height="50.000000000000057"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="22n-m2-Gof"/>
                                                     <constraint firstAttribute="width" constant="50" id="uJu-w4-Sa3"/>
@@ -4958,7 +4958,7 @@
                                                             <rect key="frame" x="10" y="5" width="300" height="70"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor3" translatesAutoresizingMaskIntoConstraints="NO" id="geW-WT-aH8">
-                                                                    <rect key="frame" x="5" y="5" width="60" height="60"/>
+                                                                    <rect key="frame" x="5" y="5" width="60" height="60.000000000000057"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="H45-oE-ewp"/>
                                                                     </constraints>
@@ -5133,7 +5133,7 @@
                                         <rect key="frame" x="10" y="35" width="300" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor1" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-tk-XjL">
-                                                <rect key="frame" x="10" y="15" width="50" height="50"/>
+                                                <rect key="frame" x="10" y="15" width="50" height="50.000000000000057"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="GVz-U5-5Nn"/>
                                                     <constraint firstAttribute="width" constant="50" id="mBQ-RG-rnj"/>
@@ -5794,7 +5794,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor3" translatesAutoresizingMaskIntoConstraints="NO" id="YIr-bx-fDr">
-                                                <rect key="frame" x="5" y="30" width="65" height="65"/>
+                                                <rect key="frame" x="5" y="30" width="65" height="65.000000000000057"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="HKz-Ed-n3T"/>
                                                 </constraints>
@@ -7412,7 +7412,7 @@
                                                             <rect key="frame" x="5" y="5" width="310" height="91"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor1" translatesAutoresizingMaskIntoConstraints="NO" id="Sg6-i5-3Ux">
-                                                                    <rect key="frame" x="5" y="20.5" width="50" height="50"/>
+                                                                    <rect key="frame" x="5" y="20.5" width="50" height="50.000000000000057"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="0tl-iQ-BVp"/>
                                                                         <constraint firstAttribute="width" constant="50" id="aXJ-2g-jMQ"/>
@@ -7565,7 +7565,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Appointments " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxz-xq-Cjl">
-                                <rect key="frame" x="83.5" y="20" width="153.5" height="25"/>
+                                <rect key="frame" x="79.5" y="20" width="161.5" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="ftk-O0-cdt"/>
                                 </constraints>
