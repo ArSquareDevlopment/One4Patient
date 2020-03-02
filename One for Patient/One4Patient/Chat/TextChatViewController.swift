@@ -29,7 +29,7 @@ class TextChatViewController: UIViewController {
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //
-//        connection = SignalR("http://www.one4patient.com")
+//        connection = SignalR("http://localhost:55830")
 //        connection.useWKWebView = true
 //        connection.signalRVersion = .v2_2_0
 //
@@ -140,7 +140,7 @@ class TextChatViewController: UIViewController {
 //            connection.stop()
 //
 //        }
-        
+//        
     }
     
     

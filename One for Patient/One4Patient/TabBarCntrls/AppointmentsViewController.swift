@@ -388,7 +388,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
             cell.userIMGView.makeRound()
             cell.dataView.layer.cornerRadius = 10
             cell.dataView.layer.borderColor = UIColor.baseColor.cgColor
-            cell.dataView.layer.borderWidth = 1.0
+            cell.dataView.layer.borderWidth = 2.0
            
             
             if bookingSC.selectedSegmentIndex == 0 {
@@ -433,7 +433,8 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
         cell.statusLbl.makeRound()
         cell.dataView.elevate(elevation: 3.0)
         cell.dataView.layer.cornerRadius = 10
-        
+        cell.dataView.layer.borderWidth = 1.0
+        cell.dataView.layer.borderColor = UIColor.baseColor.cgColor
             
         let appointmentDate = cellItem.dateOfAppointment.prefix(10)
         cell.dateLbl.text = "\(appointmentDate)"
@@ -445,35 +446,25 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
         switch cellItem.currentStatus {
         case 0:
             cell.statusLbl.text = "Queued"
-            cell.statusLbl.backgroundColor = .baseColor
-            cell.statusLbl.layer.cornerRadius = 10
+            
 
         case 1:
             cell.statusLbl.text = "Accepted"
-            cell.statusLbl.backgroundColor = .systemGreen
-            cell.statusLbl.layer.cornerRadius = 10
+           
 
         case 2:
             cell.statusLbl.text = "Declined"
-            cell.statusLbl.backgroundColor = .systemRed
-            cell.statusLbl.layer.cornerRadius = 10
-
+            
         case 3:
             cell.statusLbl.text = "Cancelled"
-            cell.statusLbl.backgroundColor = .systemOrange
-           cell.statusLbl.layer.cornerRadius = 10
+           
 
         case 4:
             cell.statusLbl.text = "Closed"
-            cell.statusLbl.backgroundColor = .systemRed
-           cell.statusLbl.layer.cornerRadius = 10
-
+            
         default:
             cell.statusLbl.text = "Queued"
-            cell.statusLbl.backgroundColor = .baseColor
-            cell.statusLbl.layer.cornerRadius = 10
-
-
+            
         }
 
         
