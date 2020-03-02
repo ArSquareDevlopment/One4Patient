@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AMPopTip
 
 class AppointmentsViewController: UIViewController {
     @IBOutlet weak var bookingSC: UISegmentedControl!
@@ -22,11 +23,8 @@ class AppointmentsViewController: UIViewController {
     @IBOutlet var bookView: UIView!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var membersTV: UITableView!
-    
-    
     @IBOutlet weak var notifyLbl: UILabel!
     @IBOutlet weak var notifyIMGView: UIImageView!
-    
     @IBOutlet var notifyView: UIView!
    
     var refreshControl = UIRefreshControl()
@@ -47,6 +45,8 @@ class AppointmentsViewController: UIViewController {
     var sendQuery = "Today"
     var sendID = GlobalVariables.accountID
     var isNotified:Bool = false
+    var popup = PopTip()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +65,6 @@ class AppointmentsViewController: UIViewController {
         dataTV.rowHeight = 135
         profileView.elevate(elevation: 3.0)
         membersTV.rowHeight = 60
-        membersTV.isHidden = true
-        bookView.isHidden = true
         notifyFunc()
         if BookingFor.isUserSelected == true {
             nameLbl.text = BookingFor.userName
@@ -78,7 +76,21 @@ class AppointmentsViewController: UIViewController {
             IDLbl.text = GlobalVariables.accountID
         }
         refreshControl.addTarget(self, action: #selector(refreshing), for: .valueChanged)
-        dataTV.refreshControl = refreshControl
+//        dataTV.refreshControl = refreshControl
+        self.view.addSubview(bookView)
+        bookView.frame = CGRect(x: 0, y: 0, width: 200, height: 150)
+        bookView.isHidden = true
+        popup.bubbleColor = .baseColor
+        popup.edgeMargin = 5
+        popup.offset = 2
+        popup.bubbleOffset = 0
+        popup.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        popup.shadowOpacity = 0.4
+        popup.shadowRadius = 3
+        popup.shadowOffset = CGSize(width: 1, height: 1)
+        popup.shadowColor = .black
+        popup.shouldDismissOnTap = false
+
     }
     func notifyFunc() {
         self.view.addSubview(notifyView)
@@ -135,9 +147,9 @@ class AppointmentsViewController: UIViewController {
     @IBAction func typeSCAxn(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             if BookingFor.isUserSelected == true {
-                sendID = BookingFor.userId
+            sendID = BookingFor.userId
             } else {
-                sendID = GlobalVariables.accountID
+            sendID = GlobalVariables.accountID
 
             }
            sendQuery = "Upcoming"
@@ -181,24 +193,26 @@ class AppointmentsViewController: UIViewController {
     
     @IBAction func bookBtnAct(_ sender: UIButton) {
 
-    let VC = self.storyboard?.instantiateViewController(withIdentifier: "SpecialityVC") as! SpecialityVC
+    let VC = self.storyboard?.instantiateViewController(withIdentifier: "SymptomsVC") as! SymptomsVC
     self.navigationController?.pushViewController(VC, animated: true)
     }
     
     func showBookingView() {
-        self.view.addSubview(bookView)
-        bookView.showPopupAnimation()
-        bookView.elevate(elevation: 10.0)
-        bookView.center = self.view.center
-        bookView.layer.cornerRadius = 10
-        bookingSC.selectedSegmentIndex = 1
+        bookView.isHidden = false
+        popup.show(customView: bookView, direction: .down, in: view, from: profileView.frame)
+//        self.view.addSubview(bookView)
+//        bookView.showPopupAnimation()
+//        bookView.elevate(elevation: 10.0)
+//        bookView.center = self.view.center
+//        bookView.layer.cornerRadius = 10
+        bookingSC.selectedSegmentIndex = 0
         getMembersData()
     }
     
     
     @IBAction func backAxn(_ sender: UIButton) {
-        
-        bookView.removeFromSuperview()
+        popup.hide()
+//        bookView.removeFromSuperview()
     }
     
     
@@ -214,7 +228,7 @@ class AppointmentsViewController: UIViewController {
         if reach.isConnectedToNetwork() == true {
             notifyView.isHidden = true
 
-            playLottie(fileName: "heart")
+            playLottie(fileName: "heartBeat")
             membersTV.isHidden = false
 
 
@@ -318,9 +332,6 @@ class AppointmentsViewController: UIViewController {
            if parsedData.result.isEmpty == false {
            
            dataArray = parsedData.result
-        
-            hideNotificationView()
-
            dataTV.isHidden = false
             dataTV.reloadWithAnimation()
            print("Got Appointment Details")
@@ -376,7 +387,10 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
             let cell = membersTV.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BookingTC
             cell.userIMGView.makeRound()
             cell.dataView.layer.cornerRadius = 10
-
+            cell.dataView.layer.borderColor = UIColor.baseColor.cgColor
+            cell.dataView.layer.borderWidth = 1.0
+           
+            
             if bookingSC.selectedSegmentIndex == 0 {
             let cellItem = mySubscriptonDetails[indexPath.row]
             cell.nameLbl.text = cellItem.user.userName
@@ -395,6 +409,11 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AppointListTVC
         let cellItem = dataArray[indexPath.row]
+            if cellItem.reasonForAppointment == nil {
+                cell.appTypeLbl.text = "Reason : Empty"
+            } else {
+                cell.appTypeLbl.text = "Reason : \(cellItem.reasonForAppointment)"
+            }
         if cellItem.specialist.userName == nil {
         cell.nameLbl.text = "Empty Doctor"
         } else {
@@ -418,7 +437,7 @@ extension AppointmentsViewController: UITableViewDelegate, UITableViewDataSource
             
         let appointmentDate = cellItem.dateOfAppointment.prefix(10)
         cell.dateLbl.text = "\(appointmentDate)"
-        cell.appTypeLbl.text = "Reason : \(cellItem.reasonForAppointment)"
+        
         let time = cellItem.startTimeOfAppointment.suffix(8)
         cell.timeLbl.text = "\(time)"
         cell.dataView.layer.borderColor = UIColor.baseColor.cgColor

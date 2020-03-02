@@ -13,7 +13,7 @@ import Network
 import AMPopTip
 
 
-
+public var selectedDate = ""
 extension UIViewController {
     
 //MARK: Camera Alert
@@ -72,20 +72,21 @@ extension UIViewController {
     
     
     func showInternetAlert() {
-        let alert = UIAlertController(title: "Alert" , message: "Check Internet Connection", preferredStyle: .alert)
-           alert.setTitlet(font: UIFont(name: "Baskerville-SemiBold", size: 14), color: .red)
-           alert.setMessage(font: UIFont(name: "Baskerville-SemiBold", size: 14), color: .black)
-           alert.setBackgroundColor(color: .white)
-        self.present(alert, animated: true, completion: nil)
+    let alert = UIAlertController(title: "Alert" , message: "Check Internet Connection", preferredStyle: .alert)
+    alert.setTitlet(font: UIFont(name: "Baskerville-SemiBold", size: 14), color: .red)
+    alert.setMessage(font: UIFont(name: "Baskerville-SemiBold", size: 14), color: .black)
+    alert.setBackgroundColor(color: .white)
+    self.present(alert, animated: true, completion: nil)
     }
 
 //    MARK: LOTTIE ANIMATION
     
     func playLottie(fileName:String) {
     let animView = AnimationView(name: fileName)
-    animView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+    animView.frame = CGRect(x: 0, y: 0, width: 100, height: 70)
     animView.center  = self.view.center
     animView.backgroundColor = .clear
+    self.view.addBlurEffect()
     self.view.addSubview(animView)
     animView.tag = 99
     animView.loopMode = .loop
@@ -98,16 +99,20 @@ extension UIViewController {
            
     func stopLottie() {
     let animieView = self.view.viewWithTag(99) as! AnimationView
+    self.view.removeBlurEffect()
     animieView.stop()
     animieView.removeFromSuperview()
     
     }
     
+//    MARK: POPover ViewController
+    
+    
     func getCurrentDateString() -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateStyle = .medium
     dateFormatter.timeStyle = .none
-    dateFormatter.dateFormat = "dd-MM-yyyy" //"dd.MM.yy"                // 21.10.17
+    dateFormatter.dateFormat = "dd-MMM-yyyy" //"dd.MM.yy"                // 21.10.17
     let date = Date()
          
         // US English Locale (en_US)
@@ -151,7 +156,6 @@ extension UIViewController {
     func showTip(Txt:String,dir:PopTipDirection, from:CGRect) {
         
         let msgTip = PopTip()
-        
         msgTip.edgeMargin = 5
         msgTip.offset = 2
         msgTip.bubbleOffset = 0
@@ -167,6 +171,68 @@ extension UIViewController {
         msgTip.actionAnimation = .bounce(5)
         msgTip.show(text: Txt, direction: dir, maxWidth: view.frame.width, in: self.view, from: from)
     }
+    
+    
+    
+    func showPopDate(tag:Int, direction:PopTipDirection, from:CGRect) {
+        let datePickerView = UIDatePicker(frame: CGRect(x: 0, y: 0, width: 250, height: 180))
+        datePickerView.datePickerMode = .date
+        if tag == 0 {
+            datePickerView.maximumDate = Date()
+        } else {
+            datePickerView.minimumDate = Date()
+
+        }
+
+        datePickerView.setValue(UIColor.white, forKey: "textColor")
+        datePickerView.backgroundColor = UIColor.baseColor
+        datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+        
+        let msgTip = PopTip()
+        
+        msgTip.edgeMargin = 5
+        msgTip.offset = 2
+        msgTip.bubbleOffset = 0
+        msgTip.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        msgTip.bubbleColor = .baseColor
+        msgTip.font = .italicSystemFont(ofSize: 13)
+        msgTip.arrowRadius = 0
+        msgTip.shadowOpacity = 0.4
+        msgTip.shadowRadius = 3
+        msgTip.shadowOffset = CGSize(width: 1, height: 1)
+        msgTip.shadowColor = .black
+
+           msgTip.tapHandler = { _ in
+             print("tap")
+           }
+
+           msgTip.tapOutsideHandler = { _ in
+             print("tap outside")
+           }
+
+           msgTip.swipeOutsideHandler = { _ in
+             print("swipe outside")
+           }
+
+           msgTip.dismissHandler = { _ in
+             print("dismiss")
+            
+           }
+       
+        msgTip.actionAnimation = .bounce(5)
+    
+        msgTip.show(customView: datePickerView, direction: direction, in: view, from: from)
+    }
+    
+    
+    @objc func handleDatePicker(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        selectedDate = dateFormatter.string(from: sender.date)
+        print("text = \(selectedDate)")
+
+        }
+    
     
 
 }

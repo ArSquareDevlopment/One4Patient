@@ -11,8 +11,10 @@ import WebKit
 
 class MeetingRoomVC: UIViewController {
     
+    @IBOutlet weak var menuBtn: UIButton!
     
     
+    @IBOutlet weak var videoBtn: UIButton!
     
     var zoomPass = String()
 

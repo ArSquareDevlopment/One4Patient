@@ -119,19 +119,20 @@ class LoginVC: UIViewController {
     
     @IBAction func loginAxn(_ sender: UIButton) {
 
+
         if userNameTF.text == "" || passTF.text == "" {
         popUpAlert(title: "Alert", message: "Enter all details", action: .alert)
         }  else {
             postData()
         }
-        
+
         
         
     }
     
     func postData() {
         if reach.isConnectedToNetwork() == true {
-                   playLottie(fileName: "heartBeat")
+        playLottie(fileName: "heartBeat")
         let details = [UserName:userNameTF.text as Any, Password:passTF.text as Any] as [String:Any]
     ApiService.callPost(url:ClientInterface.patientLoginUrl, params: details, methodType: "POST", tag: "register", finish:finishPost)
     } else {
@@ -140,15 +141,19 @@ class LoginVC: UIViewController {
 
     }
 
-//    MARK:- signUp action
-    
+//MARK:Signup
     @IBAction func signupBtn(_ sender: UIButton) {
+         let VC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
         
-        let VC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
-        self.navigationController?.pushViewController(VC, animated: true)
+        VC.modalPresentationStyle = .popover
+        VC.modalTransitionStyle = .coverVertical
+        present(VC, animated: true) {
+            
+        }
+
     }
 
-    //    Mark: Remember Me Action
+    //    MARK: Remember Me Action
 
     @objc func handleCheckBoxTap(_ sender: UITapGestureRecognizer) {
         
@@ -233,13 +238,17 @@ class LoginVC: UIViewController {
 
                 
                 if parsedData.Result.Role! == "Specialist"{
+            GlobalVariables.isDoctor = true
             let story = UIStoryboard(name: "Specialist", bundle: nil)
             let VC = story.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
             self.navigationController?.pushViewController(VC, animated: true)
+                    
             } else {
+            GlobalVariables.isDoctor = false
             let VC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                    
             self.navigationController?.pushViewController(VC, animated: true)
-                GlobalVariables.isDoctor = false
+                
             }
                 
             } else {

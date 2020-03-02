@@ -79,6 +79,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string>public.app-category.healthcare-fitness</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+    <string>zoomus</string>
+    </array>
 </dict>
 </plist>

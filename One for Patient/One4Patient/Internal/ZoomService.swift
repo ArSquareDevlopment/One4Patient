@@ -47,6 +47,7 @@ class ZoomService: NSObject, MobileRTCAuthDelegate {
   // Authenticates user to use MobileRTC.
   func authenticateSDK() {
      let zoomSDK = MobileRTC.shared()
+    
 //    zoomSDK.mobileRTCDomain = ZoomAPI.domain
     zoomSDK.setMobileRTCDomain(ZoomAPI.domain)
     guard let authService = zoomSDK.getAuthService()  else {
@@ -74,7 +75,7 @@ class ZoomService: NSObject, MobileRTCAuthDelegate {
 // MARK: - ZoomService Meeting Management
 extension ZoomService {
   
-  // Join a Zoom meeting.
+  // MARK:Join a Zoom meeting.
   func joinMeeting(name: String = ZoomAPI.defaultName, number: Int, password: String = "") {
     guard isAPIAuthenticated || isUserAuthenticated, let meetingService = MobileRTC.shared().getMeetingService() else { return }
     

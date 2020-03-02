@@ -14,6 +14,7 @@ class AppointmentDetailsVC: UIViewController {
     
     @IBOutlet weak var displayIDLbl: UILabel!
     
+    @IBOutlet weak var activeLbl: UILabel!
     @IBOutlet weak var cancelBtn: UIButton!
     
     @IBOutlet weak var docIMGView: UIImageView!
@@ -29,10 +30,11 @@ class AppointmentDetailsVC: UIViewController {
     @IBOutlet weak var appTypeLbl1: UILabel!
     @IBOutlet weak var emergencyLbl: UILabel!
     
+    @IBOutlet weak var connectSV: UIStackView!
     @IBOutlet weak var encountersLbl: UILabel!
     
     @IBOutlet weak var viewCountersBtn: UIButton!
-    @IBOutlet weak var currentENCBtn: UIButton!
+    @IBOutlet weak var connectBtn: UIButton!
     @IBOutlet weak var reasonLbl: UILabel!
     @IBOutlet weak var viewBtn: UIButton!
     
@@ -57,7 +59,8 @@ class AppointmentDetailsVC: UIViewController {
         specialistView.elevate(elevation: 3.0)
         specialistView.layer.cornerRadius = 10
         viewBtn.layer.cornerRadius = 10
-        
+        viewCountersBtn.layer.cornerRadius = 10
+        connectBtn.layer.cornerRadius = 10
     }
         
 
@@ -119,7 +122,16 @@ class AppointmentDetailsVC: UIViewController {
             print(parsedData)
             if parsedData.statusCode == 200 {
                 encounterList = parsedData.result.encounters
-                currentENCBtn.setTitle("\(String(describing: encounterList.last!.DisplayId!))", for: .normal)
+                
+                for list in encounterList {
+                    if list.EncounterStatus == 1 {
+                        activeLbl.text = list.DisplayId!
+                    } else {
+                        activeLbl.text = "0"
+
+                    }
+                }
+                
                 encountersLbl.text = "\(encounterList.count)"
                 if  encounterList.last?.Zoom_id != nil {
                 ZoomDetails.ZoomID = "\((encounterList.last?.Zoom_id!)!)"
@@ -133,12 +145,14 @@ class AppointmentDetailsVC: UIViewController {
                 } else {
                     print("No Zoom Url")
                 }
-                
-             
+                GlobalVariables.patientName = parsedData.result.patient.userName!
+                GlobalVariables.appointmentStatus = parsedData.result.currentStatus
+                print("current Appointemt status = \(GlobalVariables.appointmentStatus)")
                 displayIDLbl.text = parsedData.result.displayID
                 dataArray = parsedData.result.appointmentSymptomMaps
                 docNameLbl.text = parsedData.result.specialist.userName!
                 GlobalVariables.SPName = docNameLbl.text!
+                
                 if parsedData.result.isEmergency == true {
                 emergencyLbl.text = "YES"
                 emergencyLbl.textColor = .red
@@ -149,41 +163,43 @@ class AppointmentDetailsVC: UIViewController {
             switch parsedData.result.currentStatus {
             case 0:
             statusLbl.text = "Queued"
-            statusLbl.backgroundColor = .systemOrange
-                
+            connectSV.isHidden = true
+            cancelBtn.isHidden = false
             case 1:
                 statusLbl.text = "Accepted"
-                statusLbl.backgroundColor = .green
-                
+                connectSV.isHidden = false
+                cancelBtn.isHidden = false
+
             case 2:
                         
                 statusLbl.text = "Declined"
-                statusLbl.backgroundColor = .red
-                
+                connectSV.isHidden = true
+                cancelBtn.isHidden = true
             case 3:
                 statusLbl.text = "Cancelled"
-                statusLbl.backgroundColor = .red
-                
+                connectSV.isHidden = true
+                cancelBtn.isHidden = true
             case 4:
                 statusLbl.text = "Closed"
-                statusLbl.backgroundColor = .orange
-                
+                connectSV.isHidden = true
+                cancelBtn.isHidden = true
             case 5:
                 statusLbl.text = "FollowUp"
-                statusLbl.backgroundColor = .baseColor
-
+                connectSV.isHidden = true
+                cancelBtn.isHidden = false
             case 6:
                 statusLbl.text = "Pooled"
-                statusLbl.backgroundColor = .baseColor
-
+                connectSV.isHidden = true
+                cancelBtn.isHidden = false
             case 7:
                 statusLbl.text = "PopFromPool"
-                statusLbl.backgroundColor = .baseColor
+                connectSV.isHidden = true
+                cancelBtn.isHidden = false
                                
             case 8:
                 statusLbl.text = "PushToPool"
-                statusLbl.backgroundColor = .baseColor
-                               
+                connectSV.isHidden = true
+                cancelBtn.isHidden = true
             default:
                 statusLbl.backgroundColor = .baseColor
             }
@@ -237,6 +253,7 @@ class AppointmentDetailsVC: UIViewController {
         
         
     @IBAction func viewENCAxn(_ sender: UIButton) {
+        
         let VC = self.storyboard?.instantiateViewController(withIdentifier: "EncountersVC") as! EncountersVC
         self.navigationController?.pushViewController(VC, animated: true)
     }
@@ -249,6 +266,7 @@ class AppointmentDetailsVC: UIViewController {
         
 
     @IBAction func cancelBtn(_ sender: UIButton) {
+        cancelTF.isHidden = false
         if cancelTF.text?.isEmpty == true {
         popUpAlert(title: "Alert", message: "Specify Reason for Cancel", action: .alert)
         } else {

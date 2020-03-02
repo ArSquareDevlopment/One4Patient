@@ -275,6 +275,10 @@ extension MedicationVC: UITableViewDataSource, UITableViewDelegate {
             break
         }
         cell.dataView.elevate(elevation: 5.0)
+        cell.dataView.layer.cornerRadius = 10
+        cell.dataView.layer.borderWidth = 1.0
+        cell.dataView.layer.borderColor = UIColor.baseColor.cgColor
+
         
         cell.deleteBtn.addTarget(self, action: #selector(onTappedBtn(_:)), for: .touchUpInside)
         

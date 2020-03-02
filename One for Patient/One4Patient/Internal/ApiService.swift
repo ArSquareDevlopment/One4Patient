@@ -20,7 +20,7 @@ class ApiService: NSObject {
         var request = URLRequest(url: url)
         request.httpMethod = methodType
         
-
+        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         
@@ -79,7 +79,6 @@ class ApiService: NSObject {
         guard let url = URL(string: url) else { return }
         var request = URLRequest(url: url)
         request.httpMethod = methodType
-//        let autho = "Bearer " + Preferences.getUserToken()
         let autho = "Bearer " + GlobalVariables.token
 
         print("API TOKEN = \(autho)")
@@ -136,17 +135,19 @@ class ApiService: NSObject {
             
         }
     }
-    static func callWithDevice(url:String, params: Any ,methodType: String, tag : String ,  finish: @escaping ((message:String, data:Data?, tag : String)) -> Void)
-        {
+    
+    static func callWithDevice(url:String, params: Any ,methodType: String, tag : String ,  finish: @escaping ((message:String, data:Data?, tag : String)) -> Void) {
             
             guard let url = URL(string: url) else { return }
             var request = URLRequest(url: url)
             request.httpMethod = methodType
             let autho = "Bearer " + GlobalVariables.token
-           
-            request.addValue(autho, forHTTPHeaderField: "Authorization")
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.addValue(GlobalVariables.deviceID, forHTTPHeaderField: "deviceId")
+           let fcmToken = GlobalVariables.fcmToken
+           print("fcmToken = \(fcmToken)")
+           print("Auth Token = \(autho)")
+           request.addValue(autho, forHTTPHeaderField: "Authorization")
+           request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue(fcmToken, forHTTPHeaderField: "deviceTokenId")
             
             if methodType == "POST"  || methodType == "PUT" {
                 

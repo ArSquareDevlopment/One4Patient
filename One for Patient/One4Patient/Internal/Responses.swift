@@ -952,6 +952,7 @@ struct Encounter: Decodable {
     let Zoom_topic:String?
     let Zoom_join_url:String?
     let UniqueId, DisplayId: String?
+    let EncounterStatus:Int?
 }
 
 //// MARK: - Encounter
@@ -1051,13 +1052,13 @@ struct AppointmentListResult: Decodable {
     let dateOfAppointment, startTimeOfAppointment, endTimeOfAppointment, reasonForAppointment: String
     let currentStatus: Int
     let isPooled, isConsultingAppointment, isEmergency, isAllDayAppointment: Bool
-  let closureNote: JSONNull?
+//  let closureNote: JSONNull?
 //    let reasonForCancellation: String
 //    let encounters: [Encounter]
 
     let priority: Int
     let followUpNeeded: Bool
-    let followUpReferenceAppointmentID, followUpNoteBySpecialist, followUpSchedule: JSONNull?
+//    let followUpReferenceAppointmentID, followUpNoteBySpecialist, followUpSchedule: JSONNull?
     let followUpScheduleBetweenFrom, followUpScheduleBetweenTo, preferredModeOfContact: String
     let appointmentTimeSlotMaps: [AppointmentTimeSlotMap]
 
@@ -1078,17 +1079,17 @@ struct AppointmentListResult: Decodable {
         case isConsultingAppointment = "IsConsultingAppointment"
         case isEmergency = "IsEmergency"
         case isAllDayAppointment = "IsAllDayAppointment"
-        case closureNote = "ClosureNote"
+//        case closureNote = "ClosureNote"
 //        case reasonForCancellation = "ReasonForCancellation"
 //        case encounters = "Encounters"
 
         case priority = "Priority"
         case followUpNeeded = "FollowUpNeeded"
-        case followUpReferenceAppointmentID = "FollowUpReferenceAppointmentId"
-        case followUpNoteBySpecialist = "FollowUpNoteBySpecialist"
-        case followUpSchedule = "FollowUpSchedule"
+//        case followUpReferenceAppointmentID = "FollowUpReferenceAppointmentId"
+//        case followUpNoteBySpecialist = "FollowUpNoteBySpecialist"
+//        case followUpSchedule = "FollowUpSchedule"
         case followUpScheduleBetweenFrom = "FollowUpScheduleBetweenFrom"
-        case followUpScheduleBetweenTo = "FollowUpScheduleBetweenTo"
+      case followUpScheduleBetweenTo = "FollowUpScheduleBetweenTo"
         case preferredModeOfContact = "PreferredModeOfContact"
         case appointmentTimeSlotMaps = "AppointmentTimeSlotMaps"
     }
@@ -1284,11 +1285,11 @@ struct SingleResult: Decodable {
     let dateOfAppointment, startTimeOfAppointment, endTimeOfAppointment, reasonForAppointment: String
     let currentStatus: Int
     let isPooled, isConsultingAppointment, isEmergency, isAllDayAppointment: Bool
-    let closureNote: JSONNull?
+//    let closureNote: JSONNull?
 //    let reasonForCancellation: String
     let priority: Int
     let followUpNeeded: Bool
-    let followUpReferenceAppointmentID, followUpNoteBySpecialist, followUpSchedule: JSONNull?
+//    let followUpReferenceAppointmentID, followUpNoteBySpecialist, followUpSchedule: JSONNull?
     let followUpScheduleBetweenFrom, followUpScheduleBetweenTo, preferredModeOfContact: String
     let appointmentSymptomMaps: [AppointmentSymptomMap]
     let encounters: [Encounter]
@@ -1311,13 +1312,13 @@ struct SingleResult: Decodable {
         case isConsultingAppointment = "IsConsultingAppointment"
         case isEmergency = "IsEmergency"
         case isAllDayAppointment = "IsAllDayAppointment"
-        case closureNote = "ClosureNote"
+//        case closureNote = "ClosureNote"
 //        case reasonForCancellation = "ReasonForCancellation"
         case priority = "Priority"
         case followUpNeeded = "FollowUpNeeded"
-        case followUpReferenceAppointmentID = "FollowUpReferenceAppointmentId"
-        case followUpNoteBySpecialist = "FollowUpNoteBySpecialist"
-        case followUpSchedule = "FollowUpSchedule"
+//        case followUpReferenceAppointmentID = "FollowUpReferenceAppointmentId"
+//        case followUpNoteBySpecialist = "FollowUpNoteBySpecialist"
+//        case followUpSchedule = "FollowUpSchedule"
         case followUpScheduleBetweenFrom = "FollowUpScheduleBetweenFrom"
         case followUpScheduleBetweenTo = "FollowUpScheduleBetweenTo"
         case preferredModeOfContact = "PreferredModeOfContact"

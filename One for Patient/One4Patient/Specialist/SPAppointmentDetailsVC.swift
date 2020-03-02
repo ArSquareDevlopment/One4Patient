@@ -9,22 +9,38 @@
 import UIKit
 
 class SPAppointmentDetailsVC: UIViewController {
+    
+    @IBOutlet weak var contactLbl: UILabel!
+    @IBOutlet weak var appDisplayID: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
-    @IBOutlet weak var appTypeLbl: UILabel!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var userIMGView: UIImageView!
     @IBOutlet weak var reasonLbl: UILabel!
-    @IBOutlet weak var statusSC: UISegmentedControl!
     @IBOutlet weak var emergencyLbl: UILabel!
-    @IBOutlet weak var cancelTF: UITextField!
-    @IBOutlet weak var updateBtn: UIButton!
+    @IBOutlet weak var reasonTF: UITextField!
     @IBOutlet weak var symptomsCV: UICollectionView!
-    
+    @IBOutlet weak var viewEncounters: UIButton!
+    @IBOutlet weak var encountersList: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
     
+    @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var followBtn: UIButton!
+    @IBOutlet weak var acceptBtn: UIButton!
+    @IBOutlet weak var declineBtn: UIButton!
+    @IBOutlet weak var connectSV: UIStackView!
+    @IBOutlet weak var encountersSV: UIStackView!
+    @IBOutlet weak var buttonsSV: UIStackView!
+    
+    @IBOutlet weak var activeEncounterLbl: UILabel!
+    
+    @IBOutlet weak var connectBtn: UIButton!
+    
+    
+    
     var dataArray:[AppointmentSymptomMap] = []
+    
     var sendStatus = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,60 +50,94 @@ class SPAppointmentDetailsVC: UIViewController {
     
     func viewChanges() {
         getData()
-        userIMGView.makeRound()
-        CVChanges()
-        cancelTF.isHidden = true
-        statusLbl.layer.cornerRadius = 10
-        updateBtn.layer.cornerRadius = 10
         profileView.layer.cornerRadius = 10
         profileView.elevate(elevation: 3.0)
-        statusLbl.makeRound()
+        userIMGView.makeRound()
+        CVChanges()
+        statusLbl.layer.cornerRadius = 10
+       
+        acceptBtn.layer.cornerRadius = 10
+        declineBtn.layer.cornerRadius = 10
+        closeBtn.layer.cornerRadius = 10
+        followBtn.layer.cornerRadius = 10
+        connectBtn.layer.cornerRadius = 10
+        reasonTF.isHidden = true
+        viewEncounters.layer.cornerRadius = 10
+       
     }
     
     
-    @IBAction func statusAxn(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 1 {
-        cancelTF.isHidden = false
-        sendStatus = "2"
-        } else if sender.selectedSegmentIndex == 2 {
-        cancelTF.isHidden = false
-        sendStatus = "4"
-        } else if sender.selectedSegmentIndex == 3 {
-        cancelTF.isHidden = true
-        sendStatus = "5"
-        } else {
-        cancelTF.isHidden = true
-        sendStatus = "1"
-        }
+    
+    @IBAction func connectAxn(_ sender: UIButton) {
+        
+        let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MeetingRoomVC") as! MeetingRoomVC
+        
+        self.navigationController?.pushViewController(VC, animated: true)
     }
+    
+    
+    
+    
+    
+    @IBAction func viewEncountersAxn(_ sender: UIButton) {
+        
+        let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EncountersVC") as! EncountersVC
+        
+        self.navigationController?.pushViewController(VC, animated: true)
+        
+        
+    }
+    
+    
     
     
     @IBAction func updateAxn(_ sender: UIButton) {
-        if statusSC.selectedSegmentIndex != 0 && statusSC.selectedSegmentIndex != 1 && statusSC.selectedSegmentIndex != 2 && statusSC.selectedSegmentIndex != 3   {
-        popUpAlert(title: "Alert", message: " Appointment Starus is not Selected.", action: .alert)
-        } else if statusSC.selectedSegmentIndex == 1 || statusSC.selectedSegmentIndex == 2 {
+        switch sender.tag {
+        case 0:
+            sendStatus = "1"
+            postData()
             
-        if cancelTF.text == "" {
-        popUpAlert(title: "Alert", message: "Please Specify Reason ", action: .alert)
-        } else {
-        postData()
-        }
+        case 1:
+            reasonTF.isHidden = false
+            if reasonTF.text?.isEmpty == true {
+            popUpAlert(title: "Alert", message: "Please Specify Reason", action: .alert)
+            } else {
+                sendStatus = "2"
+                 postData()
+            }
             
-        } else {
-        postData()
+        case 2:
+            reasonTF.isHidden = false
+            if reasonTF.text?.isEmpty == true {
+            popUpAlert(title: "Alert", message: "Please Specify Reason", action: .alert)
+            } else {
+                sendStatus = "4"
+                 postData()
+            }
+            
+        case 3:
+            reasonTF.isHidden = false
+            if reasonTF.text?.isEmpty == true {
+            popUpAlert(title: "Alert", message: "Please Specify Reason", action: .alert)
+            } else {
+                sendStatus = "5"
+                 postData()
+            }
+        default:
+            break
         }
     }
     
     
     @IBAction func backAxn(_ sender: UIButton) {
-    self.navigationController?.popViewController(animated: true)
-        
+      self.navigationController?.popViewController(animated: true)
     }
     
 //    MARK: API Call
     func getData() {
     if reach.isConnectedToNetwork() == true {
         dataArray.removeAll()
+
     playLottie(fileName: "heartBeat")
         
     ApiService.callPostToken(url: ClientInterface.getAppbyIDUrl + "\(GlobalVariables.appointmentID)", params: "", methodType: "GET", tag: "GetAppointment", finish:finishPost)
@@ -100,7 +150,7 @@ class SPAppointmentDetailsVC: UIViewController {
         
         if reach.isConnectedToNetwork() == true {
         playLottie(fileName: "heartBeat")
-        let details = ["AppointmentStatus":sendStatus as Any, "StatusMessage":cancelTF.text!] as [String:Any]
+        let details = ["AppointmentStatus":sendStatus as Any, "StatusMessage":reasonTF.text!] as [String:Any]
         ApiService.callPostToken(url: ClientInterface.EditAppStatusUrl, params: details, methodType: "POST", tag: "EditStatus", finish:finishPost)
         print("details = \(details)")
         } else {
@@ -122,8 +172,8 @@ class SPAppointmentDetailsVC: UIViewController {
         print(parsedData)
         if parsedData.StatusCode == 200 {
         popUpAlert(title: "Success", message: "Appoinment Status Updated successfully", action: .alert)
-        cancelTF.text = ""
-        statusSC.selectedSegmentIndex = -1
+        reasonTF.text = ""
+        reasonTF.isHidden = true
         getData()
             
         } else {
@@ -145,52 +195,126 @@ class SPAppointmentDetailsVC: UIViewController {
            let parsedData = try JSONDecoder().decode(SingleAppoinmentResponse.self, from: jsonData)
            print(parsedData)
            if parsedData.statusCode == 200 {
-            
+            appDisplayID.text = parsedData.result.displayID
+            statusLbl.makeRound()
+
             symptomsCV.reloadData()
             print("AppID = \(parsedData.result.id)")
             dataArray = parsedData.result.appointmentSymptomMaps
             nameLbl.text = parsedData.result.patient.userName!
-            appTypeLbl.text = "Appointment Type :  \(parsedData.result.preferredModeOfContact)"
+            contactLbl.text = "Mode of Contact:  \(parsedData.result.preferredModeOfContact)"
             if parsedData.result.isEmergency == true {
                 emergencyLbl.text = "IS Emergency : YES"
             } else {
                 emergencyLbl.text = "IS Emergency : NO"
              }
             
+            GlobalVariables.patientName = parsedData.result.patient.userName!
+            
+            GlobalVariables.appointmentStatus = parsedData.result.currentStatus
+             print("Appointment Status = \(String(describing: GlobalVariables.appointmentStatus))")
+            
+            encountersList.text = "\(parsedData.result.encounters.count)"
+           
+            for list in parsedData.result.encounters {
+                if  list.EncounterStatus == 1 {
+                    activeEncounterLbl.text = list.DisplayId!
+                    connectBtn.isHidden = false
+                    ZoomDetails.ZoomID = "\(list.Zoom_id!)"
+                    ZoomDetails.ZoomUrl = list.Zoom_join_url!
+                    
+                } else {
+                    ZoomDetails.ZoomID = ""
+                    ZoomDetails.ZoomUrl = ""
+                    activeEncounterLbl.text = "00"
+                    activeEncounterLbl.textColor = .red
+                    connectBtn.isHidden = true
+
+                    
+                }
+            }
+            
             switch parsedData.result.currentStatus {
             case 0:
                 statusLbl.text = "Queued"
-                statusLbl.backgroundColor = .systemOrange
+                acceptBtn.isHidden = false
+                declineBtn.isHidden = false
+                
+                closeBtn.isHidden = true
+                followBtn.isHidden = true
+                encountersSV.isHidden = true
+                connectSV.isHidden = true
             case 1:
                 statusLbl.text = "Accepted"
-                statusLbl.backgroundColor = .green
+                
+                acceptBtn.isHidden = true
+                declineBtn.isHidden = true
+                closeBtn.isHidden = false
+                followBtn.isHidden = false 
+
+                encountersSV.isHidden = false
+                connectSV.isHidden = false
             case 2:
                 statusLbl.text = "Declined"
-                statusLbl.backgroundColor = .red
+                encountersSV.isHidden = false
+                closeBtn.isHidden = false
+                followBtn.isHidden = true
+
+                connectSV.isHidden = true
+                acceptBtn.isHidden = true
+                declineBtn.isHidden = true
             case 3:
                 statusLbl.text = "Cancelled"
-                statusLbl.backgroundColor = .red
+                encountersSV.isHidden = false
+                closeBtn.isHidden = false
+                followBtn.isHidden = true
+
+                connectSV.isHidden = true
+                acceptBtn.isHidden = true
+                declineBtn.isHidden = true
             case 4:
                 statusLbl.text = "Closed"
-                statusLbl.backgroundColor = .orange
+                encountersSV.isHidden = false
+                buttonsSV.isHidden = true
             case 5:
                 statusLbl.text = "FollowUp"
-                statusLbl.backgroundColor = .baseColor
+                encountersSV.isHidden = false
+                closeBtn.isHidden = false
+                followBtn.isHidden = true
 
+                connectSV.isHidden = true
+                acceptBtn.isHidden = true
+                declineBtn.isHidden = true
             case 6:
                 statusLbl.text = "Pooled"
-                statusLbl.backgroundColor = .baseColor
+                encountersSV.isHidden = false
+                closeBtn.isHidden = false
+                followBtn.isHidden = false
 
+                connectSV.isHidden = true
+                acceptBtn.isHidden = true
+                declineBtn.isHidden = true
             case 7:
                 statusLbl.text = "PopFromPool"
-                statusLbl.backgroundColor = .baseColor
-                
+                encountersSV.isHidden = false
+                closeBtn.isHidden = false
+                followBtn.isHidden = false
+
+                connectSV.isHidden = true
+                acceptBtn.isHidden = true
+                declineBtn.isHidden = true
+
             case 8:
                 statusLbl.text = "PushToPool"
-                statusLbl.backgroundColor = .baseColor
-                
+                encountersSV.isHidden = false
+                closeBtn.isHidden = false
+                followBtn.isHidden = false
+
+                connectSV.isHidden = true
+                acceptBtn.isHidden = true
+                declineBtn.isHidden = true
             default:
-                statusLbl.backgroundColor = .baseColor
+                break
         }
             
             let dateStr = parsedData.result.dateOfAppointment.prefix(10)

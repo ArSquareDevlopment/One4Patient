@@ -18,7 +18,7 @@ class SPHomeVC: UIViewController {
     @IBOutlet weak var notifyLbl: UILabel!
     var dataArray:[AppointmentListResult] = []
     var sendQuery = "Today"
-    
+    var sendStatus = "-1"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +27,15 @@ class SPHomeVC: UIViewController {
     }
     
     func viewChanges() {
-    dataTV.rowHeight = 100
+    dataTV.rowHeight = 150
     getData()
     showNotify()
 
     }
     func showNotify() {
-        self.view.addSubview(notifyView)
-        notifyView.center = self.view.center
-        notifyView.isHidden = true
+    self.view.addSubview(notifyView)
+    notifyView.center = self.view.center
+    notifyView.isHidden = true
     }
     
     
@@ -68,7 +68,8 @@ class SPHomeVC: UIViewController {
     if reach.isConnectedToNetwork() == true {
     notifyView.isHidden = true
     playLottie(fileName: "heartBeat")
-    let  details = ["SpecialistUserId":GlobalVariables.accountID as Any, "CustomQuery":sendQuery as Any ] as [String:Any]
+    let  details = ["SpecialistUserId":GlobalVariables.accountID as Any, "CustomQuery":sendQuery as Any, "CurrentStatus": sendStatus as Any] as [String:Any]
+        
     ApiService.callPostToken(url: ClientInterface.appointmentListUrl, params: details, methodType: "POST", tag: "AppointmentList", finish:finishPost)
         print("Completeddetails = \(details)")
     } else {
@@ -96,13 +97,7 @@ class SPHomeVC: UIViewController {
     } else {
         dataTV.isHidden = true
         notifyView.isHidden = false
-//        if typeSC.selectedSegmentIndex == 1 {
-//        popUpAlert(title: "Alert", message: "No Upcoming's Appointment List", action: .alert)
-//        } else if typeSC.selectedSegmentIndex == 2 {
-//        popUpAlert(title: "Alert", message: "No Completed Appointment List", action: .alert)
-//        } else {
-//        popUpAlert(title: "Alert", message: "No Today's Appointment List", action: .alert)
-//        }
+
         }
         
     } else {
@@ -138,32 +133,29 @@ extension SPHomeVC: UITableViewDelegate, UITableViewDataSource {
         cell.IDLbl.text = "\(cellPath.id)"
         cell.dataView.layer.cornerRadius = 10
         cell.dataView.elevate(elevation: 3.0)
-        cell.statusLbl.layer.cornerRadius = 10
-        cell.appTypeLbl.text = "Appointment Type: \(cellPath.preferredModeOfContact)"
+        cell.statusLbl.makeRound()
+        
+        cell.reasonLbl.text = "Reason : \(cellPath.reasonForAppointment)"
+        cell.displayIDLbl.text = cellPath.displayID
         cell.IMGView.makeRound()
-        cell.contentView.layer.cornerRadius = 10
-        cell.contentView.layer.borderWidth = 2.0
-        cell.contentView.layer.borderColor = UIColor.baseColor.cgColor
+//        cell.contentView.layer.cornerRadius = 10
+//        cell.contentView.layer.borderWidth = 2.0
+//        cell.contentView.layer.borderColor = UIColor.baseColor.cgColor
         switch cellPath.currentStatus {
         case 0:
             cell.statusLbl.text = "Queued"
-            cell.statusLbl.backgroundColor = .white
 
         case 1:
             cell.statusLbl.text = "Accepted"
-            cell.statusLbl.backgroundColor = .systemGreen
 
         case 2:
             cell.statusLbl.text = "Declined"
-            cell.statusLbl.backgroundColor = .systemRed
 
         case 3:
             cell.statusLbl.text = "Cancelled"
-            cell.statusLbl.backgroundColor = .systemOrange
 
         case 4:
             cell.statusLbl.text = "Closed"
-            cell.statusLbl.backgroundColor = .systemRed
 
         default:
             break

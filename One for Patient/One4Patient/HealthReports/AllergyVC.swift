@@ -291,7 +291,7 @@ extension AllergyVC: UITableViewDataSource, UITableViewDelegate {
         cell.dataView.layer.cornerRadius = 10
         cell.dataView.elevate(elevation: 5.0)
         cell.dataView.layer.borderColor = UIColor.baseColor.cgColor
-        cell.dataView.layer.borderWidth = 1.0
+        cell.dataView.layer.borderWidth = 2.0
             
             return cell
         }

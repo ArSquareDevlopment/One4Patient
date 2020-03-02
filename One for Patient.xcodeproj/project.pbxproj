@@ -88,6 +88,7 @@
 		D6BDFAA723781607003B44BF /* NearestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BDFAA623781607003B44BF /* NearestViewController.swift */; };
 		D6BDFAA92378161B003B44BF /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BDFAA82378161B003B44BF /* ReportsViewController.swift */; };
 		D6BDFAAB237816A0003B44BF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BDFAAA237816A0003B44BF /* MenuViewController.swift */; };
+		D6DB3A312407E77D006D5ED9 /* DemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DB3A302407E77D006D5ED9 /* DemoVC.swift */; };
 		D6DFF3542378197F00021642 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DFF3532378197F00021642 /* MainViewController.swift */; };
 		D6DFF3562378199400021642 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DFF3552378199400021642 /* ContentViewController.swift */; };
 		D6E14543238662FF00A8386C /* ViewCntrl+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E14542238662FF00A8386C /* ViewCntrl+Ext.swift */; };
@@ -239,6 +240,7 @@
 		D6BDFAA623781607003B44BF /* NearestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestViewController.swift; sourceTree = "<group>"; };
 		D6BDFAA82378161B003B44BF /* ReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		D6BDFAAA237816A0003B44BF /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D6DB3A302407E77D006D5ED9 /* DemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoVC.swift; sourceTree = "<group>"; };
 		D6DFF3532378197F00021642 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D6DFF3552378199400021642 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		D6E14542238662FF00A8386C /* ViewCntrl+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewCntrl+Ext.swift"; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				D62C2117238F918800EE0B65 /* SlidesViewController.swift */,
 				D6F71D3023ED3925001743EB /* NewViewController.swift */,
 				D6BDFAAA237816A0003B44BF /* MenuViewController.swift */,
+				D6DB3A302407E77D006D5ED9 /* DemoVC.swift */,
 				D6DFF3532378197F00021642 /* MainViewController.swift */,
 				D6E145442386678E00A8386C /* NotificationViewController.swift */,
 				D63FD92823AA3831000B0BC5 /* PassViewController.swift */,
@@ -869,6 +872,7 @@
 				D62C2108238BE20700EE0B65 /* CallVC.swift in Sources */,
 				D620453423FAA9C700F974EC /* MeetingRoomVC.swift in Sources */,
 				D6A62D3223AC85CD000B0664 /* EducationTC.swift in Sources */,
+				D6DB3A312407E77D006D5ED9 /* DemoVC.swift in Sources */,
 				D63CA70123D1AA5A008BB97F /* SPSideMenuTC.swift in Sources */,
 				D63FD92923AA3831000B0BC5 /* PassViewController.swift in Sources */,
 				D6BDFAAB237816A0003B44BF /* MenuViewController.swift in Sources */,

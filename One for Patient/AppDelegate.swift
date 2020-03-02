@@ -51,8 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseConfiguration.shared.setLoggerLevel(.min)
         FirebaseApp.configure()
         
-        let fcmToken = Messaging.messaging().fcmToken!
-        print("fcmToken =\(fcmToken)" )
+        GlobalVariables.fcmToken = Messaging.messaging().fcmToken!
+        print("fcmToken =\(GlobalVariables.fcmToken)" )
         
 //        MARK: Device Token
         InstanceID.instanceID().instanceID { (result, error) in
@@ -69,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = .baseColor
         
         IQKeyboardManager.shared .enable = true;
+//        MARK:Zoom Configuration
         ZoomService.sharedInstance.authenticateSDK()
         ReachabilityManager.shared.startMonitoring()
         UNUserNotificationCenter.current().delegate = self

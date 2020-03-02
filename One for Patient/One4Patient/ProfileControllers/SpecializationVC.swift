@@ -11,6 +11,7 @@ import UIKit
 class SpecializationVC: UIViewController {
     
     
+    @IBOutlet var notifyView: UIView!
     
     
     @IBOutlet weak var dataTV: UITableView!
@@ -26,7 +27,9 @@ class SpecializationVC: UIViewController {
         dataTV.delegate = self
         dataTV.dataSource = self
         dataTV.rowHeight = 185
-        dataTV.reloadWithAnimation()
+        view.addSubview(notifyView)
+        notifyView.center = view.center
+        notifyView.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +51,9 @@ class SpecializationVC: UIViewController {
     func getDetails() {
         if reach.isConnectedToNetwork() == true {
        playLottie(fileName: "heartBeat")
-       ApiService.callPostToken(url:ClientInterface.getSpecilazationUrl, params: "", methodType: "GET", tag: "GetSplInfo", finish:finishPost)
+            notifyView.isHidden = true
+      
+    ApiService.callPostToken(url:ClientInterface.getSpecilazationUrl, params: "", methodType: "GET", tag: "GetSplInfo", finish:finishPost)
         } else {
             popUpAlert(title: "Alert", message: "Check Internet coneection", action: .alert)
         }
@@ -83,9 +88,17 @@ class SpecializationVC: UIViewController {
         let parsedData = try JSONDecoder().decode(EducationResponse.self, from: jsonData)
         print("parsedData = \(parsedData)")
         if parsedData.statusCode == 200 {
-        dataArray = parsedData.result
-        dataTV.reloadWithAnimation()
-         print("Got Spl Details")
+            if parsedData.result.isEmpty == false {
+                dataTV.isHidden = false
+                notifyView.isHidden = true
+                dataArray = parsedData.result
+                dataTV.reloadWithAnimation()
+        } else {
+                dataTV.isHidden = true
+                notifyView.isHidden = false
+            }
+            print("Got Spl Details")
+
         } else {
         print("Check Details")
         }

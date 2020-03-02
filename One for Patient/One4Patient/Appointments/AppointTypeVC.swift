@@ -101,7 +101,7 @@ class AppointTypeVC: UIViewController {
         } 
          
         let details = [sendUser:sendID as Any, "MedicalSpecialityId":GlobalVariables.specialityID as Any,  "SpecialistUserId":GlobalVariables.specialistID as Any,  "DateOfAppointment":GlobalVariables.appointmentDate as Any,  "TimeSlots":[slotMap] as Any, "IsEmergency":emergency as Any,  "ReasonForAppointment":reasonTxtV.text! as Any, "PreferredModeOfContact":appointmentType as Any, "MasterSymptoms":symptoms as Any ] as [String:Any]
-        ApiService.callWithDevice(url: ClientInterface.postAppoinmentUrl, params: details, methodType: "POST", tag: "BookAppointment", finish:finishPost)
+        ApiService.callPostToken(url: ClientInterface.postAppoinmentUrl, params: details, methodType: "POST", tag: "BookAppointment", finish:finishPost)
         print("details = \(details)")
 
                 

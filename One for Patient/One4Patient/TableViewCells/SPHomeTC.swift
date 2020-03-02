@@ -18,8 +18,9 @@ class SPHomeTC: UITableViewCell {
     @IBOutlet weak var statusLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     
+    @IBOutlet weak var displayIDLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var appTypeLbl: UILabel!
+    @IBOutlet weak var reasonLbl: UILabel!
     
 
     override func awakeFromNib() {

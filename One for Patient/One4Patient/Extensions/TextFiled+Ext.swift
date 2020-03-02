@@ -8,44 +8,47 @@
 
 import Foundation
 import UIKit
+import AMPopTip
+
+
+
+
 
 extension UITextField {
     
-func pastDatePicker() {
-     let datePickerView = UIDatePicker()
-         datePickerView.datePickerMode = .date
-         datePickerView.maximumDate = Date()
-         datePickerView.backgroundColor = UIColor.white
-         datePickerView.setValue(UIColor.baseColor, forKey: "textColor")
-         self.inputView = datePickerView
-         datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+   func pastDatePicker() {
+    let datePickerView = UIDatePicker()
+    datePickerView.datePickerMode = .date
+    datePickerView.maximumDate = Date()
+    self.inputView = datePickerView
+    datePickerView.backgroundColor = UIColor.baseColor
+    datePickerView.setValue(UIColor.white, forKey: "textColor")
+    datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
     }
     
-func futureDatePicker() {
+    func futureDatePicker() {
     let datePickerView = UIDatePicker()
-        datePickerView.datePickerMode = .date
-        datePickerView.minimumDate = Date()
-        datePickerView.setValue(UIColor.baseColor, forKey: "textColor")
-        datePickerView.backgroundColor = UIColor.white
-        self.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
-        
+    datePickerView.datePickerMode = .date
+    datePickerView.minimumDate = Date()
+    self.inputView = datePickerView
+    datePickerView.backgroundColor = UIColor.baseColor
+    datePickerView.setValue(UIColor.white, forKey: "textColor")
+    datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
     }
-func timePicker() {
+    func timePicker() {
     let datePickerView = UIDatePicker()
-        datePickerView.datePickerMode = .time
-//       datePickerView.locale = Locale(identifier: "en_GB")
-        datePickerView.backgroundColor = UIColor.white
-        datePickerView.setValue(UIColor.baseColor, forKey: "textColor")
-        self.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(handleTimePicker(sender:)), for: .valueChanged)
+    datePickerView.datePickerMode = .time
+    datePickerView.backgroundColor = UIColor.baseColor
+    datePickerView.setValue(UIColor.white, forKey: "textColor")
+    datePickerView.addTarget(self, action: #selector(handleTimePicker(sender:)), for: .valueChanged)
+
     }
 
     @objc func handleDatePicker(sender: UIDatePicker) {
     let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MMM-yyyy"
         self.text = dateFormatter.string(from: sender.date)
-        self.inputView!.endEditing(true)
+
 
     }
     
@@ -55,10 +58,38 @@ func timePicker() {
         dateFormatter.locale = Locale(identifier: "en_GB")
         dateFormatter.timeStyle = .short
         self.text = dateFormatter.string(from: sender.date)
-        self.inputView!.endEditing(true)
 
     }
     
+    func showPopDate(direction:PopTipDirection,view:UIView, from:CGRect) {
+            let datePickerView = UIDatePicker(frame: CGRect(x: 0, y: 0, width: 250, height: 150))
+            datePickerView.datePickerMode = .date
+            datePickerView.minimumDate = Date()
+            datePickerView.setValue(UIColor.white, forKey: "textColor")
+            datePickerView.backgroundColor = UIColor.baseColor
+    //        self.inputView = datePickerView
+            datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+            
+            let msgTip = PopTip()
+            
+            msgTip.edgeMargin = 5
+            msgTip.offset = 2
+            msgTip.bubbleOffset = 0
+            msgTip.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            msgTip.bubbleColor = .baseColor
+            msgTip.font = .italicSystemFont(ofSize: 13)
+            msgTip.arrowRadius = 0
+            msgTip.shadowOpacity = 0.4
+            msgTip.shadowRadius = 3
+            msgTip.shadowOffset = CGSize(width: 1, height: 1)
+            msgTip.shadowColor = .black
+            
+            msgTip.actionAnimation = .bounce(5)
+            msgTip.show(customView: datePickerView, direction: direction, in: view, from: from)
+    //        msgTip.show(text: Txt, direction: dir, maxWidth: view.frame.width, in: self.view, from: from)
+    }
+        
+        
     enum Direction {
         case Left
         case Right

@@ -8,6 +8,7 @@
 
 import UIKit
 import NetworkExtension
+import AMPopTip
 
 class SignUpVC: UIViewController {
     @IBOutlet weak var signUpBtn: UIButton!
@@ -48,7 +49,9 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var regiserConst: NSLayoutConstraint!
     
     @IBOutlet weak var dataView: UIView!
-    
+    var popup = PopTip()
+    let picker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: 250, height: 150))
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,23 +62,37 @@ class SignUpVC: UIViewController {
    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
    
-       hideTextFields()
+//       hideTextFields()
 
   }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     
-        animate(animieType: .curveEaseIn)
+//        animate(animieType: .curveEaseIn)
 }
     
+    @objc func handlePicker(sender: UIDatePicker) {
+    let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        DOBTF.text = dateFormatter.string(from: sender.date)
+
+
+    }
     
     
     
     func viewChanges() {
     signUpBtn.makeRound()
     hideKeyboardWhenTappedAround()
-        
+    picker.maximumDate = Date()
+    picker.backgroundColor = .baseColor
+    picker.addTarget(self, action: #selector(handlePicker(sender:)), for: .valueChanged)
+    picker.setValue(UIColor.white, forKey: "textColor")
+
+    picker.datePickerMode = .date
+    popup.bubbleColor = .baseColor
+    
     }
 
     @IBAction func genderSC(_ sender: UISegmentedControl) {
@@ -90,14 +107,18 @@ class SignUpVC: UIViewController {
    
 
    @IBAction func DOBTFAxn(_ sender: UITextField) {
-    
-        sender.pastDatePicker()
+//    sender.resignFirstResponder()
+//    popup.show(customView: picker, direction: .up, in: view, from: sender.frame)
+    sender.pastDatePicker()
     }
     
     
     
     @IBAction func backBtnAxn(_ sender: UIButton) {
-    self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true) {
+            
+        }
+//    self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func passTFAXN(_ sender: UITextField) {
@@ -108,8 +129,10 @@ class SignUpVC: UIViewController {
     }
     
     @IBAction func loginBtnAxn(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-        
+
+        dismiss(animated: true) {
+            
+        }
     }
     
     @IBAction func signUPAxn(_ sender: UIButton) {
@@ -142,28 +165,27 @@ class SignUpVC: UIViewController {
     
     
     func postData() {
-        if reach.isConnectedToNetwork() == true {
+    if reach.isConnectedToNetwork() == true {
            
-            if userSC.selectedSegmentIndex == 0 {
-            let registration : Dictionary = [FName : firstNameTF.text!, LName : lastNameTF.text!, UserName : userNameTF.text!, Email : emailTF.text!, ConfirmPassword : conformTF.text!, PhoneNumber: phoneNoTF.text!, DOB: DOBTF.text!, Gender: genderType, MasterSubscriptionId:"1", MasterSubscriptionPlanId: "1",Password:passwordTF.text!] as [String : Any]
+    if userSC.selectedSegmentIndex == 0 {
+    let registration : Dictionary = [FName : firstNameTF.text!, LName : lastNameTF.text!, UserName : userNameTF.text!, Email : emailTF.text!, ConfirmPassword : conformTF.text!, PhoneNumber: phoneNoTF.text!, DOB: DOBTF.text!, Gender: genderType, MasterSubscriptionId:"1", MasterSubscriptionPlanId: "1",Password:passwordTF.text!] as [String : Any]
         
-                    playLottie(fileName: "heartBeat")
-                ApiService.callPost(url: ClientInterface.patientRegisterUrl, params: registration, methodType: "POST", tag: "register", finish:finishPost)
-            print("details = \(registration)")
-            } else {
+    playLottie(fileName: "heartBeat")
+    ApiService.callPost(url: ClientInterface.patientRegisterUrl, params: registration, methodType: "POST", tag: "register", finish:finishPost)
+    print("details = \(registration)")
+    
+    } else {
                 
-                let registration : Dictionary = [FName : firstNameTF.text!, LName : lastNameTF.text!, UserName : userNameTF.text!, Email : emailTF.text!, ConfirmPassword : conformTF.text!, PhoneNumber: phoneNoTF.text!, DOB: DOBTF.text!, Gender: genderType, Password:passwordTF.text!] as [String : Any]
+    let registration : Dictionary = [FName : firstNameTF.text!, LName : lastNameTF.text!, UserName : userNameTF.text!, Email : emailTF.text!, ConfirmPassword : conformTF.text!, PhoneNumber: phoneNoTF.text!, DOB: DOBTF.text!, Gender: genderType, Password:passwordTF.text!] as [String : Any]
                 
-            playLottie(fileName: "heartBeat")
+    playLottie(fileName: "heartBeat")
 
-            ApiService.callPost(url: ClientInterface.splRegisterUrl, params: registration, methodType: "POST", tag: "SplRegister", finish:finishPost)
+    ApiService.callPost(url: ClientInterface.splRegisterUrl, params: registration, methodType: "POST", tag: "SplRegister", finish:finishPost)
                     print("spldetails = \(registration)")
-                
-                
-            }
-            } else {
-            popUpAlert(title: "Internet", message: "Check Connection", action: .alert)
-        }
+    }
+    } else {
+    popUpAlert(title: "Internet", message: "Check Connection", action: .alert)
+    }
     }
     
     func finishPost (message:String, data:Data? , tag: String) -> Void {

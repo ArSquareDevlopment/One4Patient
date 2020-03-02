@@ -125,7 +125,7 @@ extension UIView {
     
     // Add BlurEffect to view
     func addBlurEffect()  {
-    let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
     let blurEffectView = UIVisualEffectView(effect: blurEffect)
     blurEffectView.frame = self.bounds
     blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
@@ -177,6 +177,7 @@ extension UIView {
     
 // Animation From Bottom
     func showBottomAnimation() {
+        
     self.isHidden = false
     UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseIn], animations: {
     self.center.y -= self.bounds.height
@@ -185,6 +186,7 @@ extension UIView {
     
 //    View Hide to bottom
     func hideBottomAnimation() {
+        
     UIView.animate(withDuration: 2, delay: 0, options: [.curveLinear],animations: {
     self.center.y += self.bounds.height
     self.layoutIfNeeded() },  completion: {(_ completed: Bool) -> Void in

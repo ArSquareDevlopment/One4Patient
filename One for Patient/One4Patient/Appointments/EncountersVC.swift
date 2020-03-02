@@ -91,19 +91,32 @@ extension EncountersVC: UITableViewDataSource, UITableViewDelegate {
         
         switch cellItem.encounterStatus {
         case 1:
-            cell.statusLbl.text = "Active"
-            cell.statusLbl.backgroundColor = .green
-        case 2:
-            cell.statusLbl.backgroundColor = .red
+            if GlobalVariables.appointmentStatus == 1 {
+                cell.statusLbl.text = "Active"
+                cell.roomBtn.isHidden = false
 
+            } else {
+                cell.statusLbl.text = "Closed"
+                cell.roomBtn.isHidden = true 
+
+            }
+        case 2:
         cell.statusLbl.text = "Closed"
+        cell.roomBtn.isHidden = true 
+
         default:
             break
         }
         
         cell.titleLbl.text = cellItem.displayID
-        cell.patientNameLbl.text = GlobalVariables.userName
-        cell.SPNameLbl.text = GlobalVariables.SPName
+        if GlobalVariables.isDoctor == true {
+            cell.SPNameLbl.text = GlobalVariables.userName
+            cell.patientNameLbl.text = GlobalVariables.patientName
+        } else {
+            cell.patientNameLbl.text = GlobalVariables.userName
+            cell.SPNameLbl.text = GlobalVariables.SPName
+
+        }
         cell.IDLbl.text = "\(cellItem.id)"
         cell.chatDetailsBtn.tag = indexPath.row
         cell.notesDetailsBtn.tag = indexPath.row
@@ -113,13 +126,13 @@ extension EncountersVC: UITableViewDataSource, UITableViewDelegate {
         cell.notesDetailsBtn.addTarget(self, action: #selector(onNotesBtnTapped(_:)), for: .touchUpInside)
         cell.roomBtn.addTarget(self, action: #selector(onRoomBtnTapped(_:)), for: .touchUpInside)
         cell.dataView.layer.cornerRadius = 10
-        cell.dataView.layer.borderColor = UIColor.baseColor.cgColor
-        cell.dataView.layer.borderWidth = 2.0
-        cell.roomBtn.makeRound()
-        cell.chatDetailsBtn.makeRound()
-        cell.notesDetailsBtn.makeRound()
+        cell.contentView.layer.borderColor = UIColor.baseColor.cgColor
+        cell.contentView.layer.borderWidth = 1.0
+        cell.roomBtn.layer.cornerRadius = 10
+        cell.chatDetailsBtn.layer.cornerRadius = 10
+        cell.notesDetailsBtn.layer.cornerRadius = 10
 
-        cell.contentView.elevate(elevation: 5.0)
+        
         
         return cell
     }
@@ -155,6 +168,13 @@ extension EncountersVC: UITableViewDataSource, UITableViewDelegate {
            if let wantedIndexPath = tableView.indexPathForRow(at: point) {
            let cell = tableView.cellForRow(at: wantedIndexPath) as! EncountersListTC
                print(cell.titleLbl.text!)
+            print("Meeting Room")
+            if cell.statusLbl.text == "Active" {
+                let VC = self.storyboard?.instantiateViewController(withIdentifier: "MeetingRoomVC") as! MeetingRoomVC
+        self.navigationController?.pushViewController(VC, animated: true)
+            } else {
+                popUpAlert(title: "Alert", message: "This Meeting is Not Active", action: .alert)
+            }
     }
     }
     }

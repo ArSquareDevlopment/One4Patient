@@ -11,7 +11,8 @@ import UIKit
 class EducationVC: UIViewController {
     
     
-   
+    @IBOutlet var notifyView: UIView!
+    
     @IBOutlet weak var dataTV: UITableView!
     
     
@@ -28,6 +29,9 @@ class EducationVC: UIViewController {
         dataTV.dataSource = self
         dataTV.rowHeight = 185
         dataTV.reloadWithAnimation()
+        notifyView.center = view.center
+        view.addSubview(notifyView)
+        notifyView.isHidden = true
 
     }
     
@@ -45,9 +49,10 @@ class EducationVC: UIViewController {
     func getDetails() {
         if reach.isConnectedToNetwork() == true {
         playLottie(fileName: "heartBeat")
-        ApiService.callPostToken(url:ClientInterface.getEducationUrl, params: "", methodType: "GET", tag: "GetEducationInfo", finish:finishPost)
-         } else {
-            popUpAlert(title: "ALert", message: "Check Internet Connection", action: .alert)
+        notifyView.isHidden = true
+    ApiService.callPostToken(url:ClientInterface.getEducationUrl, params: "", methodType: "GET", tag: "GetEducationInfo", finish:finishPost)
+        } else {
+        popUpAlert(title: "ALert", message: "Check Internet Connection", action: .alert)
          }
     }
       
@@ -91,8 +96,16 @@ class EducationVC: UIViewController {
     let parsedData = try JSONDecoder().decode(EducationResponse.self, from: jsonData)
     print(parsedData)
     if parsedData.statusCode == 200 {
+        if parsedData.result.isEmpty == false {
+            
     dataArray = parsedData.result
+    dataTV.isHidden = false
+    notifyView.isHidden = true
     dataTV.reloadWithAnimation()
+    } else {
+        dataTV.isHidden = true
+        notifyView.isHidden = false
+    }
     print("Got Education Details")
     } else {
     print("Check Details")

@@ -22,38 +22,25 @@ class NewViewController: UIViewController {
     
     let manager = LocalNotificationManager()
     var firstImageView = UIImageView()
+    var popup = PopTip()
     
     
-    
-//    var popTip = PopTip()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-    self.navigationController?.navigationBar.isHidden = true
+  self.navigationController?.navigationBar.isHidden = true
         starBtn.layer.cornerRadius = 10
         firstImageFadeIn(imageView: IMGView)
         
-       getCurrentDateString()
-      
     }
     
     
     @IBAction func startAxn(_ sender: UIButton) {
+
        print("Is UserAuthe = \(ZoomService.sharedInstance.isUserAuthenticated)")
         
        print("IS APi Authe = \(ZoomService.sharedInstance.isAPIAuthenticated)")
-        
-//        showTip(Txt: "Hello", dir: .up, from: sender.frame)
-//        popTip.show(text: "Lets GetStarted", direction: .up, maxWidth: 150, in: self.view, from: sender.frame)
-        
-        
-
     let VC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        self.navigationController?.pushViewController(VC, animated: true)
-        print("Button tapped")
-        
-        print(titleArray[0].reversed())
+    self.navigationController?.pushViewController(VC, animated: true)
 
     }
     

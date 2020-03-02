@@ -136,7 +136,9 @@ struct GlobalVariables {
     static var MConditionID = ""
     static var SPName = ""
     static var deviceID = ""
-    
+    static var fcmToken = ""
+    static var appointmentStatus:Int?
+    static var patientName = ""
 }
 
 
